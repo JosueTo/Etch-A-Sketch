@@ -3,9 +3,11 @@
   height: 960px;
   border: solid black 3px;
   margin: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(16, 60px);
+  grid-template-rows: repeat(16, 60px);
 }
 
-.square {
-  border: solid black;
+.square-div {
+  border: solid blue 0.5px;
 }
