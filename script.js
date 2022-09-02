@@ -1,12 +1,14 @@
-container = document.querySelector('.container');
+const container = document.querySelector('.container');
 
-function createRow() {
-  for (i = 0; i < 256; i++) {
+// Create the grid divs
+function createDivs(size) {
+  container.style.setProperty('--size', size)
+  for (i = 0; i < size * size; i++) {
     const squareDiv = document.createElement('div');
     squareDiv.classList = 'square-div';
     container.appendChild(squareDiv);
   }
 }
 
-createRow();
+createDivs(100);
 
