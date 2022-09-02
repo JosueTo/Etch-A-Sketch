@@ -1,13 +1,48 @@
+body {
+  background-color: lightslategrey;
+}
+.header h1 {
+  text-align: center;
+  padding: 30px 0;
+  font-size: 4em;
+}
+
+.toy {
+  display: flex;
+  align-items: center;
+}
+
+.side-navbar {
+  width: 12vw;
+  height: 40vw;
+  padding: 25px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  border: solid black;
+}
+
 .container {
-  width: 960px;
-  height: 960px;
+  --size: 4;
+  width: 800px;
+  height: 800px;
   border: solid black 3px;
   margin: auto;
+  background-color: whitesmoke;
   display: grid;
-  grid-template-columns: repeat(16, 60px);
-  grid-template-rows: repeat(16, 60px);
+  /* Make our 16x16 grid div  */
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
 }
 
 .square-div {
-  border: solid blue 0.5px;
+  /* box-sizing: border-box; */
+  border: solid blue 1px;
+  border-radius: 2px;
+}
+
+.square-div:hover, .square-div:focus {
+  background-color: black;
 }

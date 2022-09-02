@@ -10,5 +10,5 @@ function createDivs(size) {
   }
 }
 
-createDivs(100);
+createDivs(8);
 
