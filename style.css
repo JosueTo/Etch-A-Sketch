@@ -1,14 +1,20 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: gainsboro;
   justify-content: center;
   align-items: center;
+  background-color: lightgray;
 }
 
 .container {
+  margin-top: 25px;
   height: 600px;
   width: 600px;
   display: grid;
-  border: 1px black solid;
+  border: 3px black solid;
+}
+
+.footer {
+  margin-top: 4em;
+  font-weight: 800;
 }
