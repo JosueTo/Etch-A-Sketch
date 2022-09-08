@@ -6,9 +6,22 @@ const buttonClear = document.querySelector('.btnClear');
 const board = document.querySelector('.container');
 const buttonSize = document.querySelector('#size');
 let color = 'black';
+let click = false;
+
+// Click to draw
+board.addEventListener('click', function(e) {
+  if (e.target.tagName != 'BUTTON') {
+    click = !click;
+    let draw = document.querySelector('#draw');
+    if (click) {
+      draw.textContent = 'Now you can draw';
+    } else {
+      draw.textContent = 'Click on the board to start drawing'
+    }
+  }
+})
 
 function createBoard(size) {
-    
   let numDivs = size * size;
 
   board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -47,15 +60,17 @@ function getColor() {
   buttonGray.addEventListener('click', () => {color = 'gray'});
   buttonErase.addEventListener('click', () => {color = 'white'});
 
-  if (color === 'random') {
-    this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  } else if (color === 'gray') {
-    let randomNum = Math.floor(Math.random() * 256);
-    this.style.backgroundColor = `rgb(${randomNum}, ${randomNum}, ${randomNum})`;
-  } else if (color === 'white') {
-    this.style.backgroundColor = 'white';
-  } else {
-    this.style.backgroundColor = 'black'
+  if (click) {
+    if (color === 'random') {
+      this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else if (color === 'gray') {
+      let randomNum = Math.floor(Math.random() * 256);
+      this.style.backgroundColor = `rgb(${randomNum}, ${randomNum}, ${randomNum})`;
+    } else if (color === 'white') {
+      this.style.backgroundColor = 'white';
+    } else {
+      this.style.backgroundColor = 'black'
+    }
   }
 }
 
@@ -68,7 +83,7 @@ buttonClear.addEventListener('click', clear);
 
 
 buttonSize.addEventListener('click', () => {
-  removeDivs(); // remove the dives previously created
+  removeDivs(); // remove the divs previously created
   let size = getSize();
   createBoard(size);
 })
