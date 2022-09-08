@@ -59,6 +59,14 @@ function getColor() {
   }
 }
 
+function clear() {
+    let divs = document.querySelectorAll('.box');
+    divs.forEach(div => div.style.backgroundColor = 'white');
+}
+
+buttonClear.addEventListener('click', clear);
+
+
 buttonSize.addEventListener('click', () => {
   removeDivs(); // remove the dives previously created
   let size = getSize();
