@@ -6,12 +6,28 @@ body {
   background-color: lightgray;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+}
+
 .container {
   margin-top: 25px;
   height: 600px;
   width: 600px;
   display: grid;
   border: 3px black solid;
+}
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  justify-content: space-between;
 }
 
 .footer {
